@@ -48,11 +48,12 @@ cd DigitalHoardingDetector
 ## 📸 Screenshots
 
 ### 🔍 System Scan Example
-![System Scan]("C:\Users\tasni\OneDrive\Pictures\Screenshots\Screenshot 2025-04-26 165847.png")
+![System Scan](screenshots/system_scan.png)
 
 ### 🧠 Psychological Quiz Example
-![Psych Quiz]("C:\Users\tasni\OneDrive\Pictures\Screenshots\Screenshot 2025-04-26 170104.png")
+![Psych Quiz](screenshots/quiz.png)
 
 ### 🎯 Final Risk Report Example
-![Final Report]("C:\Users\tasni\OneDrive\Pictures\Screenshots\Screenshot 2025-04-26 170152.png")
+![Final Report](screenshots/final_report.png)
+
 
