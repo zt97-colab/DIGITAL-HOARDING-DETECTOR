@@ -34,6 +34,7 @@ This project automatically analyzes a user's system (file counts, folder structu
 - `os`, `zipfile` (standard libraries)
 - `rarfile` (for RAR archive reading)
 - `py7zr` (for 7z archive reading)
+- Git, GitHub, VS Code
 
 ---
 
@@ -41,8 +42,16 @@ This project automatically analyzes a user's system (file counts, folder structu
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/DigitalHoardingDetector.git
-cd DigitalHoardingDetector
+git clone https://github.com/yourusername/DIGITAL-HOARDING-DETECTOR.git
+cd DIGITAL-HOARDING-DETECTOR
+
+2. Install dependencies:
+
+pip install rarfile py7zr
+
+3. Run the project:
+
+python digital_hoarding_detector.py
 
 
 ## 📸 Screenshots
