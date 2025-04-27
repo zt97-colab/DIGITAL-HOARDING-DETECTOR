@@ -54,6 +54,6 @@ cd DigitalHoardingDetector
 ![Psych Quiz](screenshots/quiz.png)
 
 ### 🎯 Final Risk Report Example
-![Final Report](screenshots/final_report.png)
+![Final Report](screenshots/system_scan.png)
 
 
