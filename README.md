@@ -66,3 +66,19 @@ python digital_hoarding_detector.py
 ![Final Report](screenshots/system_scan.png)
 
 
+📈 Future Improvements
+
+Add a full GUI (Graphical User Interface) for non-technical users
+
+Generate downloadable reports (PDF/HTML)
+
+Extend archive support to additional formats (e.g., tar.gz)
+
+Provide automatic smart cleanup actions (detect and remove unnecessary files safely)
+
+Add Disk Usage Risk Detection (coming soon)
+
+
+⭐ Star This Project
+
+If you found this tool helpful, please consider giving it a ⭐ on GitHub to support the project!
