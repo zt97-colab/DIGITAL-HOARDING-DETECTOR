@@ -3,6 +3,8 @@ import zipfile
 import rarfile
 import py7zr
 import hashlib
+import subprocess
+import platform
 
 # ======== SYSTEM SCANNER CONFIG ========
 
@@ -70,7 +72,7 @@ def scan_archive(archive_path, current_level):
     except Exception as e:
         print(f"⚠️ Skipping archive (could not open): {archive_path}")
 
-# ======== SMART DUPLICATE CLEANER FUNCTIONS ========
+# ======== DUPLICATE CLEANER FUNCTIONS ========
 
 def calculate_hash(filepath):
     hash_sha256 = hashlib.sha256()
@@ -143,6 +145,25 @@ def compare_and_merge(file1, file2):
     except Exception as e:
         print(f"⚠️ Failed to save merged file: {e}")
 
+
+def open_merged_folder():
+    """Open the merged_files folder after merging"""
+    folder_path = os.path.join(os.getcwd(), "merged_files")
+    if os.path.exists(folder_path):
+        try:
+            system_name = platform.system()
+            if system_name == "Windows":
+                subprocess.Popen(f'explorer "{folder_path}"')
+            elif system_name == "Darwin":  # Mac
+                subprocess.Popen(["open", folder_path])
+            else:  # Linux
+                subprocess.Popen(["xdg-open", folder_path])
+            print(f"📂 Opened merged folder: {folder_path}")
+        except Exception as e:
+            print(f"⚠️ Could not open folder automatically: {e}")
+    else:
+        print("⚠️ No merged files found to open.")
+
 def detect_and_handle_duplicates(target_folder):
     print("\n🔎 Scanning for duplicate text files...\n")
 
@@ -168,6 +189,9 @@ def detect_and_handle_duplicates(target_folder):
         compare_and_merge(file1, file2)
 
     print("\n🎯 Duplicate handling completed.\n")
+
+    open_merged_folder()
+
 
 # ======== PSYCHOLOGICAL QUIZ ========
 
