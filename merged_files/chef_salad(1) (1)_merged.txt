@@ -1,0 +1,13 @@
+Chef Salad,1
+
+Lettuce Iceberg,100
+
+Egg Chicken,75
+
+Pork Cured Ham Center Slice Country-Style,50
+
+Cheese Blue,50
+
+Carrot,25
+
+Chard Swiss,10

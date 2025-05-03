@@ -132,8 +132,8 @@ def compare_and_merge(file1, file2):
     else:
         shortened_content = merged_content
 
-    save_folder = os.path.join(os.getcwd(), "merged_files")
-    os.makedirs(save_folder, exist_ok=True)
+    save_folder = os.path.expanduser("~/Downloads")
+
 
     base_name = os.path.basename(file1).rsplit('.', 1)[0]
     merged_filename = os.path.join(save_folder, f"{base_name}_merged.txt")
@@ -184,13 +184,16 @@ def detect_and_handle_duplicates(target_folder):
 
     print(f"⚡ Found {len(duplicates)} duplicate file pairs.")
 
-    for file1, file2 in duplicates:
-        print(f"\n🛑 Duplicate Pair Detected:\n - {file1}\n - {file2}")
+    set_size = 5
+    for i, (file1, file2) in enumerate(duplicates, start=1):
+        print(f"\n🛑 Duplicate Pair {i} of {len(duplicates)} Detected:\n - {file1}\n - {file2}")
         compare_and_merge(file1, file2)
 
-    print("\n🎯 Duplicate handling completed.\n")
-
-    open_merged_folder()
+        if i % set_size == 0 and i != len(duplicates):
+            choice = input(f"\n⏭️ You've reviewed {i} duplicate files. Continue to the next {set_size}? (y/n): ").strip().lower()
+            if choice != 'y':
+                print("\n❌ Stopping duplicate review early as requested.")
+                break
 
 
 # ======== PSYCHOLOGICAL QUIZ ========
